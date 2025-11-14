@@ -1,0 +1,9 @@
+Wine-Classification-WebApp/
+ ┣ templates/
+ ┃ ┣ index.html
+ ┃ ┗ result.html
+ ┣ train_wine_model.py
+ ┣ wine_model.pkl
+ ┣ scaler.pkl
+ ┣ app.py
+ ┣ requirements.txt

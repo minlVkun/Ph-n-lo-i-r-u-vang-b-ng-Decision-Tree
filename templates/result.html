@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kết quả phân loại rượu</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: #f7f1e3;
+        }
+        .wine-card {
+            border-radius: 15px;
+            padding: 25px;
+            background: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .wine-title {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .wine-box {
+            padding: 15px;
+            border-radius: 10px;
+            color: white;
+        }
+        .class0 { background: #B33771; }
+        .class1 { background: #6D214F; }
+        .class2 { background: #82589F; }
+    </style>
+</head>
+
+<body>
+
+<div class="container py-5">
+    <div class="wine-card mx-auto" style="max-width: 700px;">
+        <h3 class="mb-4 text-center">🍷 Kết quả phân loại rượu vang</h3>
+
+        <!-- Hiển thị nhãn -->
+        {% if label == "class_0" or label == "Class_0" or label == "0" %}
+        <div class="wine-box class0 mb-3">
+            <h4>🍷 Loại rượu: <b>Cultivar 1</b></h4>
+            <p><b>Mô tả:</b> Rượu mạnh, đậm vị, chứa nhiều phenol và flavonoid. Hương thơm nồng và màu sắc đậm.</p>
+        </div>
+
+        {% elif label == "class_1" or label == "Class_1" or label == "1" %}
+        <div class="wine-box class1 mb-3">
+            <h4>🍷 Loại rượu: <b>Cultivar 2</b></h4>
+            <p><b>Mô tả:</b> Hương vị nhẹ, tannin thấp, độ chua cao, phù hợp người thích rượu nhẹ và dễ uống.</p>
+        </div>
+
+        {% elif label == "class_2" or label == "Class_2" or label == "2" %}
+        <div class="wine-box class2 mb-3">
+            <h4>🍷 Loại rượu: <b>Cultivar 3</b></h4>
+            <p><b>Mô tả:</b> Hương vị cân bằng giữa mạnh và nhẹ, tannin vừa phải, phổ biến trong các bữa ăn.</p>
+        </div>
+        {% endif %}
+
+        <hr>
+
+        <h5>📌 Giá trị đầu vào:</h5>
+        <ul>
+            {% for v in inputs %}
+            <li>{{ v }}</li>
+            {% endfor %}
+        </ul>
+
+        <a href="/" class="btn btn-primary mt-3">🔙 Quay lại</a>
+    </div>
+</div>
+
+</body>
+</html>
